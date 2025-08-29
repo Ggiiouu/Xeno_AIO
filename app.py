@@ -13,7 +13,7 @@ def home():
     return "Hello, I am Xeno's backend!"
 
 @app.route('/webhook', methods=['POST'])
-def webhook_handler():
+async def webhook_handler():
     # داده‌های ارسالی از تلگرام رو دریافت می‌کنه
     update = Update.de_json(request.get_json(), bot)
     
@@ -22,10 +22,11 @@ def webhook_handler():
     if update.message:
         chat_id = update.message.chat.id
         text = update.message.text
-        bot.send_message(chat_id=chat_id, text=f"You said: {text}")
+        
+        # این خط اصلاح شده تا منتظر ارسال پیام بمونه
+        await bot.send_message(chat_id=chat_id, text=f"You said: {text}")
     
     return jsonify(success=True)
 
 if __name__ == '__main__':
-    # این فقط برای تست محلیه، روی Railway بهش نیاز نداریم
     app.run(port=os.environ.get("PORT", 5000))
