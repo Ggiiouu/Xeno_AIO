@@ -17,8 +17,6 @@ async def webhook_handler():
     # داده‌های ارسالی از تلگرام رو دریافت می‌کنه
     update = Update.de_json(request.get_json(), bot)
     
-    # اینجا می‌تونی منطق اصلی بات رو اضافه کنی
-    # مثلاً می‌تونی پیام‌ها رو بر اساس محتواشون پردازش کنی
     if update.message:
         chat_id = update.message.chat.id
         text = update.message.text
