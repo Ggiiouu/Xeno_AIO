@@ -150,8 +150,8 @@ def handle_ai_response(chat_id, user_message_text, state):
         }
     }
     
-    # از مدل قوی‌تر Gemini استفاده می‌کنیم
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key={API_KEY}"
+    # تغییر مدل به نسخه flash
+    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={API_KEY}"
     
     # اضافه کردن منطق تلاش مجدد (Retry) برای خطای 429
     for attempt in range(3): # حداکثر 3 بار تلاش مجدد
