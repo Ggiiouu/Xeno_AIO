@@ -1,4 +1,5 @@
 python-telegram-bot
-pymongo
 Flask
 requests
+SQLAlchemy
+psycopg2-binary
