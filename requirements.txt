@@ -1,5 +1,5 @@
+flask
 python-telegram-bot
-Flask
+sqlalchemy
 requests
-SQLAlchemy
-psycopg2-binary
+googletrans==4.0.0rc1
